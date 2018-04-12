@@ -23,4 +23,4 @@ COPY /schema.sql /go/src/app
 RUN go-wrapper download
 RUN go-wrapper install
 
-CMD ["go", "run", "todo.go", "-g" ,"daemon off;"]
+CMD go run todo.go &
