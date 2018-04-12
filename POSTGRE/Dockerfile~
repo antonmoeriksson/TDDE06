@@ -1,0 +1,7 @@
+
+FROM ubuntu
+MAINTAINER Anton
+ENV DOCK_MESSAGE Hello World
+CMD ["go", "build"]
+CMD ["ls", "-la" ]
+CMD ["pwd", "-LP"]
