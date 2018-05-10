@@ -187,7 +187,6 @@ func (db *Database) taskHandler(w http.ResponseWriter, r *http.Request) {
 // ConnextDB connects to a postgres database.
 // it returns a database handle.
 func ConnectDb() *sql.DB {
-	// TODO: Refactor the database config
 	db, err := sql.Open("postgres", fmt.Sprintf("postgres://%s:%s@%s/%s?sslmode=disable", databaseUser, databasPassword, databaseHost, databaseName))
 	if err != nil {
 		log.Fatal(err)
@@ -207,7 +206,6 @@ func Handlers() *http.ServeMux {
 }
 
 func main() {
-	// Listen on port 5050
 	err := http.ListenAndServe(":8080", Handlers())
 	if err != nil {
 		log.Fatal(err)
