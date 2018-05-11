@@ -12,16 +12,11 @@ import (
 	"strings"
 )
 
-// 	databaseUser = "postgres"
-//	databaseHost = "db" 
-//	databaseName = "postgres" 
-
-
 const (
-	databaseUser = "johan"
-	databasPassword = "anton"
+	databaseUser = "docker"
+	databasPassword = "docker"
 	databaseHost = "localhost" 
-	databaseName = "ci_project"
+	databaseName = "docker"
 )
 
 type Task struct {
@@ -187,7 +182,9 @@ func (db *Database) taskHandler(w http.ResponseWriter, r *http.Request) {
 // ConnextDB connects to a postgres database.
 // it returns a database handle.
 func ConnectDb() *sql.DB {
+	//db, err := sql.Open("postgres", "user=docker password=docker host=localhost dbname=docker port=30000 sslmode=disable")
 	db, err := sql.Open("postgres", fmt.Sprintf("postgres://%s:%s@%s/%s?sslmode=disable", databaseUser, databasPassword, databaseHost, databaseName))
+
 	if err != nil {
 		log.Fatal(err)
 	}

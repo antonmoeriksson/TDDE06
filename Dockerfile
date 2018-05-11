@@ -23,4 +23,6 @@ COPY /schema.sql /go/src/app
 RUN go-wrapper download
 RUN go-wrapper install
 
-CMD go run todo.go &
+EXPOSE 8080
+
+CMD go run todo.go
