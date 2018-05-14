@@ -1,0 +1,16 @@
+PostgreSQL:
+docker build --no-cache -t postgres .
+docker run --rm --name=postgres_test2 --net=testnet postgres:latest
+
+Go server:
+
+docker build --no-cache -t go-server .
+docker run -p=30000:8080 --rm --name=test_server3 --net=testnet go-server:latest 
+
+
+
+Nginx commands:
+
+docker build --no-cache -t nginx .
+docker run --rm --name nginx_test --net=testnet -p=30000:80 nginx:latest
+

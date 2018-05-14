@@ -15,7 +15,7 @@ import (
 const (
 	databaseUser = "docker"
 	databasPassword = "docker"
-	databaseHost = "localhost" 
+	databaseHost = "172.18.0.2" 
 	databaseName = "docker"
 )
 
